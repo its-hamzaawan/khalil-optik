@@ -10,9 +10,9 @@ const site = usePage().props.site;
 
 const offers = [
     { icon: 'glasses', title: 'Spectacles', text: 'Find frames and lenses suited to your needs, face and lifestyle.', href: '/eyewear?category=spectacles' },
-    { icon: 'sun', title: 'Sunglasses', text: 'Stylish, protective eyewear for everyday use under the Punjab sun.', href: '/eyewear?category=sunglasses' },
     { icon: 'lens', title: 'Contact Lenses', text: 'Explore suitable contact lens options for your vision needs.', href: '/eyewear?category=contact-lenses' },
     { icon: 'eye', title: 'Eye-Care Services', text: 'Professional attention for your eye health from our eye specialist.', href: '/services' },
+    { icon: 'sun', title: 'Sunglasses', text: 'Stylish, protective eyewear for everyday use under the Punjab sun.', href: '/eyewear?category=sunglasses' },
 ];
 
 const reasons = [
@@ -33,7 +33,7 @@ const reasons = [
                 <p v-reveal class="eyebrow !text-navy-300">Jauharabad · Since 1960</p>
                 <h1 v-reveal="100" class="mt-6 text-5xl font-medium leading-[1.05] sm:text-6xl lg:text-7xl">
                     Your eyes matter.<br />
-                    <span class="italic text-navy-300">Your vision</span> matters.
+                    <span class="italic text-[#DC9A34]">Your vision</span> matters.
                 </h1>
                 <p v-reveal="200" class="mt-8 max-w-xl text-lg leading-relaxed text-navy-200">
                     For more than {{ years }} years, Khalil Optik has helped the people of Jauharabad and nearby areas
@@ -46,7 +46,7 @@ const reasons = [
                     <Link href="/eyewear" class="btn-outline-light">Browse Eyewear <Icon name="arrow" :size="16" /></Link>
                 </div>
                 <div v-reveal="400" class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-navy-200">
-                    <span class="flex items-center gap-2"><Icon name="shield" :size="18" /> PHC Registered</span>
+                   <span class="flex items-center gap-2 font-semibold text-[#DC9A34] [filter:drop-shadow(0_2px_6px_rgb(220_154_52/0.55))]"><Icon name="shield" :size="18" /> PHC Registered</span>
                     <span class="flex items-center gap-2"><Icon name="eye" :size="18" /> {{ site.doctor.name }}, {{ site.doctor.title }}</span>
                 </div>
             </div>

@@ -26,14 +26,8 @@ defineProps({ light: Boolean, large: Boolean });
 
             <!-- The logo's text: slides in on hover -->
             <span class="ko-text flex flex-col items-start whitespace-nowrap" :class="large ? 'pl-8' : 'pl-6'" aria-hidden="true">
-                <svg viewBox="0 0 64 22" fill="none" stroke-linecap="round" stroke-linejoin="round" :class="large ? 'w-12' : 'w-9'">
-                    <path
-                        class="ko-glasses"
-                        d="M3 4h22c0 9-3 14-11 14S3 13 3 4Zm36 0h22c0 9-3 14-11 14S39 13 39 4ZM25 6c3 4 11 4 14 0"
-                        stroke="#DC9A34"
-                        stroke-width="3"
-                    />
-                </svg>
+                <!-- The exact glasses cut from the logo (public/images/logo-glasses.png) -->
+                <img src="/images/logo-glasses.png" alt="" width="237" height="90" class="ko-glasses block h-auto" :class="large ? 'w-14' : 'w-11'" />
                 <span class="font-semibold leading-none text-[#DC9A34]" :class="large ? 'mt-1.5 text-[11px]' : 'mt-1 text-[9px]'">Since 1960</span>
                 <span class="font-sans font-bold leading-none text-white" :class="large ? 'mt-1 text-3xl' : 'mt-0.5 text-2xl'">Khalil Optik</span>
             </span>
@@ -69,15 +63,14 @@ defineProps({ light: Boolean, large: Boolean });
     transition-delay: 0.18s;
 }
 
-/* Orange glasses draw themselves each time the pill opens */
+/* Glasses are revealed left to right each time the pill opens */
 .ko-glasses {
-    stroke-dasharray: 140;
-    stroke-dashoffset: 140;
-    transition: stroke-dashoffset 0.2s ease;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.2s ease;
 }
 .ko-logo:hover .ko-glasses {
-    stroke-dashoffset: 0;
-    transition: stroke-dashoffset 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
 }
 
 @media (prefers-reduced-motion: reduce) {

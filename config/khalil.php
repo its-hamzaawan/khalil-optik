@@ -40,8 +40,8 @@ return [
 
     // Opening hours shown on the site (placeholders — confirm with the shop).
     'hours' => [
-        ['days' => 'Monday – Saturday', 'time' => '10:00 AM – 8:00 PM'],
-        ['days' => 'Sunday', 'time' => 'Closed'],
+        ['days' => 'Sat - Thu', 'time' => '10:00 AM – 8:00 PM'],
+        ['days' => 'Friday', 'time' => 'Closed'],
     ],
 
     // Appointment booking rules.
@@ -50,7 +50,7 @@ return [
         'closes_at' => '19:00',          // last slot starts before this time
         'slot_minutes' => 30,
         'per_slot' => 1,                 // how many bookings one slot can hold
-        'closed_days' => [0],            // 0 = Sunday … 6 = Saturday (Carbon dayOfWeek)
+        'closed_days' => [5],            // 0 = Sunday … 6 = Saturday (Carbon dayOfWeek)
         'max_days_ahead' => 30,
         'lead_minutes' => 60,            // same-day bookings need this much notice
     ],
